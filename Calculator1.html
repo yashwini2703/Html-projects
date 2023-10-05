@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            border: 2px solid black;
+            padding-bottom: 20px;
+            display: grid;
+            background-color: aquamarine;
+        }
+        
+        table,
+        tr,
+        td {
+            border: 1px solid rgb(48, 38, 38);
+            border-collapse: collapse;
+        }
+        
+        h1 {
+            color: rgb(54, 23, 61);
+        }
+        
+        input {
+            width: 99%;
+        }
+        
+        #eq {
+            background-color: orangered;
+        }
+        
+        #edu {
+            background-color: rgb(22, 20, 20);
+            color: white;
+            font-size: large;
+            width: 360px;
+            height: 40px;
+        }
+        
+        #p1 {
+            background-color: rgb(228, 215, 215);
+        }
+        
+        .button {
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        <center>Calculator </center>
+    </h1>
+    <p id="demo" style="background-color: rgb(82, 113, 116);"> </p>
+    <table align="center">
+
+        <tr>
+            <td colspan=4> <input type="text" id="edu"></td>
+
+
+        </tr>
+        <tr>
+
+            <td><input type="button" value="+" onclick="dis('+')" class="button" id="p1"></td>
+            <td><input type="button" value="-" onclick="dis('-')" class="button" id="p1"></td>
+            <td><input type="button" value="*" onclick="dis('*')" class="button" id="p1"></td>
+            <td><input type="button" value="/" onclick="dis('/')" class="button" id="p1"></td>
+
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="dis('7')" class="button"></td>
+            <td><input type="button" value="8" onclick="dis('8')" class="button"></td>
+            <td><input type="button" value="9" onclick="dis('9')" class="button"></td>
+            <td rowspan="4" id="eq"><input type="button" value="=" onclick="solve()" id="eq" class="button"></td>
+
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="dis('4')" class="button"></td>
+            <td><input type="button" value="5" onclick="dis('5')" class="button"></td>
+            <td><input type="button" value="6" onclick="dis('6')" class="button"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="dis('1')" class="button"></td>
+            <td><input type="button" value="2" onclick="dis('2')" class="button"></td>
+            <td><input type="button" value="3" onclick="dis('3')" class="button"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="0" onclick="dis('0')" class="button"></td>
+            <td><input type="button" value="." onclick="dis('.')" class="button"></td>
+            <td><input type="button" value="C" onclick="clr()" class="button"></td>
+        </tr>
+    </table>
+    <script>
+        function solve() {
+            let x = document.getElementById("edu").value
+            let y = eval(x)
+            document.getElementById('edu').value = y
+        }
+
+        function clr() {
+
+            document.getElementById('edu').value = "";
+        }
+
+        function dis(val) {
+
+            document.getElementById('edu').value += val
+        }
+    </script>
+
+</body>
+
+</html>
